@@ -8,6 +8,12 @@
 \usepackage{setspace}
 \usepackage{float}
 \usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage[framemethod=tikz]{mdframed}
+\usetikzlibrary{shadows}
+
+\newmdenv[shadow=true,shadowcolor=black,font=\sffamily,rightmargin=8pt]{shadedbox}
+
 
 \pagestyle{fancy}
 
@@ -47,15 +53,43 @@
 \section{Primer Problema}
 \subsection{Formule  el  modelo  que  permita  obtener  el  portafolio de  inversión  que  optimice  el  retorno  esperado  de  la	corporación y simultáneamente no viole su política de inversión.}
 \subsubsection{Variable de Decisión}
-\vspace{0.4cm}
 \begin{equation*}
 	\begin{split}
 		N &= (1,2,3,4,5) \\
-		X_i & = \text{Cantidad invertida en categoría } i \text{ de inversión. } \forall i \in N
+		X_i & = \text{Cantidad invertida en categoría } i \text{ de la inversión. } \forall i \in N
 	\end{split}
 \end{equation*}
+\begin{center}
+	\noindent\rule{12cm}{0.4pt}
+\end{center}
+\begin{shadedbox}
+1 = Acciones comunes, 2 = Cuotas de fondos mutuos, 3 = Bonos de Oferta Pública,\\ 4 = Bonos de Gobierno, 5 = Cuentas de Ahorro
+\end{shadedbox}
+\subsubsection{Constantes}
+\begin{equation*}
+\begin{split}
+	RAE &= [0.15,\ 0.12,\ 0.10,\ 0.05,\ 0.08] \\
+	FR & = [1.6,\ 1.0,\ 0.5,\ 0.0,\ 0.1] \\
+	RAE_i &= \text{ Retorno Anual Esperado para la categoría } i \text{ de la inversión } \forall i \in N. \\
+	FR_i &= \text{Factor de riesgo para la categoría } i \text{ de la inversión } \forall i \in N.
+\end{split}
+\end{equation*}
+\subsubsection{Función Objetivo}
+\begin{equation*}
+\begin{split}
+	maxZ = \sum_{i = 0}^{i}X_i\times RAE_i
+\end{split}
+\end{equation*}
+\subsubsection{Restricciones}
+\begin{enumerate}
+	\item $x_1 + x_2 \leq 0.3\times\sum_{i = 0}^{i}x_i$; La inversión en acciones y en cuotas de fondos mutuos no debe ser mayor que un
+	30\% del total de  las  inversiones.
+	\item $x_4 \geq x_5$; La  inversión  en  bonos  de  gobierno  no  debe  ser  inferior  a  la  inversión  en  cuentas  de  ahorro.
+	\item $x_3 + x_4 \leq 0.5\times\sum_{i = 0}^{i}x_i$ La inversión en debentures y bonos de gobierno no debe exceder el 50\% del total de las inversiones.
+	\item $x_4 \geq 0.25\times\sum_{i = 0}^{i}x_i$ La 
+	inversión en bonos de gobierno debe superar el 25\%	del total de las inversiones.
+	\item $\sum_{i = 0}^{i}x_i \leq 1,000,000$ La corporación Gamma    requiere invertir  la  suma  de  US\$  1.000.000  en el  próximo  año  fiscal. 
+	\item $\sum_{i = 0}^{i}x_i\times FR_i \leq \sum_{i = 0}^{i}x_i$  La  corporación  no  permite  que el  portafolio  de  valores  escogidos  tenga  un  factor de  riesgo ponderado mayor que 1.0. 
+\end{enumerate}
 
-
-
-	
 \end{document}

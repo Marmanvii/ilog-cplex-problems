@@ -82,14 +82,31 @@
 \end{equation*}
 \subsubsection{Restricciones}
 \begin{enumerate}
-	\item $x_1 + x_2 \leq 0.3\times\sum_{i = 1}^{i}x_i$; La inversión en acciones y en cuotas de fondos mutuos no debe ser mayor que un
+	\item La inversión en acciones y en cuotas de fondos mutuos no debe ser mayor que un
 	30\% del total de  las  inversiones.
-	\item $x_4 \geq x_5$; La  inversión  en  bonos  de  gobierno  no  debe  ser  inferior  a  la  inversión  en  cuentas  de  ahorro.
-	\item $x_3 + x_4 \leq 0.5\times\sum_{i = 1}^{i}x_i$ La inversión en debentures y bonos de gobierno no debe exceder el 50\% del total de las inversiones.
-	\item $x_4 \geq 0.25\times\sum_{i = 1}^{i}x_i$ La 
-	inversión en bonos de gobierno debe superar el 25\%	del total de las inversiones.
-	\item $\sum_{i = 1}^{i}x_i \leq 1,000,000$ La corporación Gamma    requiere invertir  la  suma  de  US\$  1.000.000  en el  próximo  año  fiscal. 
-	\item $\sum_{i = 1}^{i}x_i\times FR_i \leq \sum_{i = 1}^{i}x_i$  La  corporación  no  permite  que el  portafolio  de  valores  escogidos  tenga  un  factor de  riesgo ponderado mayor que 1.0. 
+	\begin{equation*}
+		x_1 + x_2 \leq 0.3\times\sum_{i = 1}^{i}x_i
+	\end{equation*}
+	\item La  inversión  en  bonos  de  gobierno  no  debe  ser  inferior  a  la  inversión  en  cuentas  de  ahorro.
+	\begin{equation*}
+		x_4 \geq x_5
+	\end{equation*}
+	\item La inversión en debentures y bonos de gobierno no debe exceder el 50\% del total de las inversiones.
+	\begin{equation*}
+		x_3 + x_4 \leq 0.5\times\sum_{i = 1}^{i}x_i
+	\end{equation*}
+	\item La inversión en bonos de gobierno debe superar el 25\% del total de las inversiones.
+	\begin{equation*}
+		x_4 \geq 0.25\times\sum_{i = 1}^{i}x_i
+	\end{equation*}
+	\item La corporación Gamma    requiere invertir  la  suma  de  US\$  1.000.000  en el  próximo  año  fiscal.
+	\begin{equation*}
+		\sum_{i = 1}^{i}x_i \leq 1,000,000
+	\end{equation*} 
+	\item La corporación  no  permite  que el  portafolio  de  valores  escogidos  tenga  un  factor de  riesgo ponderado mayor que 1.0.
+	\begin{equation*}
+		\sum_{i = 1}^{i}x_i\times FR_i \leq \sum_{i = 1}^{i}x_i
+	\end{equation*}
 \end{enumerate}
 
 \end{document}

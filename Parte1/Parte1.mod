@@ -22,4 +22,6 @@
  	ct3: x[3] + x[4] <= 0.5*sum(i in i)x[i];
  	ct4: x[4] >= 0.25*sum(i in i)x[i];
  	ct5: sum(i in i)x[i] <= Inversion;
+ 	
+ 	ct6: sum(i in i)x[i]*FR[i] <= sum(i in i)x[i]; 
 }

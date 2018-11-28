@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?><project>
 	<version>1.0</version>
 	<configs>
-		<config default="true" name="Configuration1" category="opl">
+		<config default="true" name="Parte1" category="opl">
 			<ref name="Parte1.mod" type="model">
 			</ref>
 			<ref name="Parte1.ops" type="setting">

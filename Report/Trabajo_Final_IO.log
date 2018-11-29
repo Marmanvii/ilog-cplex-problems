@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.11)  28 NOV 2018 20:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.11)  29 NOV 2018 03:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -889,32 +889,40 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 66.
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Trabajo_Final_IO.au
-x) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 142.
+
+ (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 142.
+
+[2] [3] (./Trabajo_Final_IO.aux) ) 
 Here is how much of TeX's memory you used:
- 23592 strings out of 492642
- 458492 string characters out of 6135566
- 501624 words of memory out of 5000000
- 27153 multiletter control sequences out of 15000+600000
+ 23609 strings out of 492642
+ 458767 string characters out of 6135566
+ 501623 words of memory out of 5000000
+ 27167 multiletter control sequences out of 15000+600000
  544123 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,17n,78p,843b,877s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-di
-st/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/
-public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
-/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><
-/usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texm
-f-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/cm-super/sfti1200.pfb>
-Output written on Trabajo_Final_IO.pdf (2 pages, 163778 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-sup
+er/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr
+/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-di
+st/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/
+public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
+/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><
+/usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on Trabajo_Final_IO.pdf (3 pages, 173060 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 94 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

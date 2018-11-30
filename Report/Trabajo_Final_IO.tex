@@ -86,7 +86,7 @@
 	\item La inversión en acciones y en cuotas de fondos mutuos no debe ser mayor que un
 	30\% del total de  las  inversiones.
 	\begin{equation*}
-		x_1 + x_2 \leq 0.3\times\sum_{i = 1}^{i}x_i
+		x_1 + x_2 \leq 0.3\times\sum_{i = 1}^{5}x_i
 	\end{equation*}
 	\item La  inversión  en  bonos  de  gobierno  no  debe  ser  inferior  a  la  inversión  en  cuentas  de  ahorro.
 	\begin{equation*}
@@ -94,19 +94,19 @@
 	\end{equation*}
 	\item La inversión en debentures y bonos de gobierno no debe exceder el 50\% del total de las inversiones.
 	\begin{equation*}
-		x_3 + x_4 \leq 0.5\times\sum_{i = 1}^{i}x_i
+		x_3 + x_4 \leq 0.5\times\sum_{i = 1}^{5}x_i
 	\end{equation*}
 	\item La inversión en bonos de gobierno debe superar el 25\% del total de las inversiones.
 	\begin{equation*}
-		x_4 \geq 0.25\times\sum_{i = 1}^{i}x_i
+		x_4 \geq 0.25\times\sum_{i = 1}^{5}x_i
 	\end{equation*}
 	\item La corporación Gamma    requiere invertir  la  suma  de  US\$  1.000.000  en el  próximo  año  fiscal.
 	\begin{equation*}
-		\sum_{i = 1}^{i}x_i \leq 1,000,000
+		\sum_{i = 1}^{5}x_i \leq 1,000,000
 	\end{equation*} 
 	\item La corporación  no  permite  que el  portafolio  de  valores  escogidos  tenga  un  factor de  riesgo ponderado mayor que 1.0.
 	\begin{equation*}
-		\sum_{i = 1}^{i}x_i\times FR_i \leq \sum_{i = 1}^{i}x_i
+		\sum_{i = 1}^{5}x_i\times FR_i \leq \sum_{i = 1}^{i}x_i
 	\end{equation*}
 	\item No negatividad.
 	\begin{equation*}
@@ -185,6 +185,7 @@
 \begin{split}
 	A&=\{1,2,3,4,5,6,7,8,9,10\}\\
 	B&=\{1,2,3,4,5,6,7\}\\
+	Costo &= \text{Tabla presentada}\\
 	CostoOP&=[8,10,9,11,9,10,12]\\
 	CostoFijo&=[1000,800,700,1200,950,1150]\\
 	MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
@@ -193,9 +194,9 @@
 \subsubsection{Variables de Decisión}
 \begin{equation*}
 \begin{split}
-	X_j&=1 \text{; Si se utiliza sitio }j\\
+	X_j&=1 \text{; Si se utiliza sitio }j\quad \forall j \in B\\
 	X_j&=0 \text{; En otro caso}\\\\
-	Y_{ij}&=1 \text{; área } i \text{ es atendida por sitio }j\\
+	Y_{ij}&=1 \text{; área } i \text{ es atendida por sitio }j\quad \forall i \in A \wedge \forall j \in B\\
 	Y_{ij}&=0 \text{; en otro caso}
 \end{split}
 \end{equation*}
@@ -203,15 +204,62 @@
 \begin{equation*}
 \begin{split}
 	minZ&=\sum_{j=1}^{7}X_j\times CostoFijo[j]+\sum_{i=1}^{10}MArea[i]\sum_{j=1}^{7}Costo[i][j]\times Y_{ij}\\
-	&+\sum_{j=1}^{7}CostoOP[j]\sum_{i=1}^{10}Y_{ij}\times MArea[i]
+	&+\sum_{j=1}^{7}CostoOP[j]\sum_{i=1}^{10}Y_{ij}\times MArea[i] \quad \forall i \in A \wedge \forall j \in B
 \end{split}
 \end{equation*}
 \subsubsection{Restricciones}
 \begin{equation*}
 	\begin{split}
-		(1)&\sum_{j=1}^{7}Y_{ij}=1\quad \forall i\in\{1,\dots,10\}\\
-		(2)&\sum_{i=1}^{10}Y_{ij}\leq 10\quad \forall j\in\{1,\dots,7\}\\
-		(3)&(i,j)\geq
+		(1)&\sum_{j=1}^{7}Y_{ij}=1\quad \forall i\in A\\
+		(2)&\sum_{i=1}^{10}Y_{ij}\leq 10\quad \forall j\in B\\
+		(3&)X_{ij}\in\{0,1\}\forall i\in A \wedge \forall j\in B
 	\end{split}
+\end{equation*}
+\subsection{Formule  el  modelo  que  permita  construir  las  plantas  de  tratamiento  de  aguas  servidas  al  mínimo  costo, sabiendo que cada sitio puede  tratar a lo más 2.000 mirialitros mensuales y cada área de recolección debe ser atendida por una única planta}
+Basta con agregar una restricción además del modelado creado para la parte anterior, junto a las demás restricciones:
+\begin{equation*}
+	\sum_{i=1}^{10}MArea[i]\times Y_{ij}\leq 2000\times X_j \quad \forall j \in B
+\end{equation*}
+\subsection{Formule  el  modelo  que  permita  construir  las  plantas de  tratamiento  de  aguas  servidas  al  mínimo  costo, asumiendo  que  cada  sitio  tiene  capacidad  ilimitada de  recibir  aguas  servidas  y  que  cada  área  de  recolección puede enviar las aguas servidas a diferentes plantas de tratamiento}
+\subsubsection{Constantes}
+\begin{equation*}
+\begin{split}
+A&=\{1,2,3,4,5,6,7,8,9,10\}\\
+B&=\{1,2,3,4,5,6,7\}\\
+Costo &= \text{Tabla presentada}\\
+CostoOP&=[8,10,9,11,9,10,12]\\
+CostoFijo&=[1000,800,700,1200,950,1150]\\
+MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
+\end{split}
+\end{equation*}
+\subsubsection{Variables de Decisión}
+\begin{equation*}
+\begin{split}
+	X_{ij}&=\text{Cantidad enviada desde área } i \text{ a sitio } j\\
+	\\
+	Y_j&=1 \text{Si se utiliza el sitio } j\\
+	Y_j=0 \text{En otro caso}
+\end{split}
+\end{equation*}
+\subsubsection{Función Objetivo}
+\begin{equation*}
+\begin{split}
+	minZ &= \sum_{j=1}^{7}Y_j\times CostoFijo[j] + \sum_{j=1}^{7}\sum_{i=1}^{10}Costo[i][j]\times X_{ij}\\ 
+	&+ \sum_{j=1}^{7}\sum_{i=1}^{10}CostoOP[j]\times X_{ij} \quad \forall i \in A \wedge \forall j \in B
+\end{split}
+\end{equation*}
+\subsubsection{Restricciones}
+\begin{equation*}
+\begin{split}
+	(1)& \sum_{i=1}^{10}X_{ij}\leq Y_{j}\times \sum_{i=1}^{10}MArea[i]\quad\forall j\in B \text{; Máxima Capacidad}\\
+	(2)&\sum_{j=1}^{7}X_{ij}=MArea[i]\quad\forall i\in A \text{; Satisfacer Demanda}
+\end{split}
+\end{equation*}
+\subsection{Formule  el  modelo  que  permita  construir  las  plantas de  tratamiento  de  aguas  servidas  al  mínimo  costo, asumiendo  que  cada  área  de  recolección  debe  ser  atendida  únicamente  por  una  planta  y  que  puede  ser construida solo una planta de tratamiento con capacidad ilimitada para recibir aguas servidas}
+Además de las restricciones presentes en la formulación anterior, se agrega la siguiente restricción:
+\begin{equation*}
+\begin{split}
+\sum_{i=1}^{10}MArea[i]\times Y_{ij}\leq 2000\times X_j\quad\forall i\in A \wedge \forall j \in B
+\end{split}
 \end{equation*}
 \end{document}

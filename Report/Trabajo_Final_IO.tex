@@ -33,8 +33,10 @@
 
 \begin{tabular}{p{15.5cm}}
 	{\large \bf Investigación de Operaciones} \\
-	Universidad Católica del Maule \\ Martín Mancilla V. - Claudio Durán N.\\
+	Universidad Católica del Maule \\ 
+	Martín Mancilla V. - Claudio Durán N.\\
 	\textit{19.386.399-k} - \textit{19.215.697-1} \\
+	\textit{https://github.com/Marmanvii/ilog-cplex-problems}\\
 	\hline
 	\\
 \end{tabular}
@@ -154,25 +156,25 @@ $\therefore$ Valor óptimo: $z=98500 \text{ dólares}$
 
 \subsubsection{Restricciones}
 \begin{itemize}
-	\item Oferta
+	\item Nodo Oferta
 		\begin{equation*}
 		\text{(1) }	X_{12}+X_{13}+X_{14}=v	
 		\end{equation*}
-	\item Demanda
+	\item Nodo Demanda
 		\begin{equation*}
 		\text{(10)}	-X_{710}-X_{810}-X_{910}=-v
 		\end{equation*}
-	\item Transición
+	\item Nodos Transición
 		\begin{equation*}
 		\begin{split}
-			(2)&X_{23}+X_{25}+X_{27}-X_{12}=0\\
-			(3)&X_{34}+X_{35}-X_{13}-X_{23}=0\\
-			(4)&X_{46}+X_{49}-X_{14}-X_{34}=0\\
-			(5)&X_{56}+X_{57}+X_{58}-X_{25}-X_{35}=0\\
-			(6)&X_{68}+X_{69}-X_{46}-X_{56}=0\\
-			(7)&X_{710}-X_{27}-X_{57}=0\\
-			(8)&X_{810}-X_{58}-X_{68}=0\\
-			(9)&X_{910}-X_{49}-X_{69}=0
+			\text{(2) }&X_{23}+X_{25}+X_{27}-X_{12}=0\\
+			\text{(3) }&X_{34}+X_{35}-X_{13}-X_{23}=0\\
+			\text{(4) }&X_{46}+X_{49}-X_{14}-X_{34}=0\\
+			\text{(5) }&X_{56}+X_{57}+X_{58}-X_{25}-X_{35}=0\\
+			\text{(6) }&X_{68}+X_{69}-X_{46}-X_{56}=0\\
+			\text{(7) }&X_{710}-X_{27}-X_{57}=0\\
+			\text{(8) }&X_{810}-X_{58}-X_{68}=0\\
+			\text{(9) }&X_{910}-X_{49}-X_{69}=0
 		\end{split}
 		\end{equation*}
 		\item Capacidad de aristas
@@ -250,9 +252,9 @@ $\therefore$ Valor óptimo: $z=98500 \text{ dólares}$
 \subsubsection{Restricciones}
 \begin{equation*}
 	\begin{split}
-		(1)&\sum_{j=1}^{7}Y_{ij}=1\quad \forall i\in A\\
-		(2)&\sum_{i=1}^{10}X_{ij}\times Y_{ij}\leq 10\quad \forall j\in B\\
-		(3&)X_{ij}\in\{0,1\}\forall i\in A \wedge \forall j\in B
+		\text{(1) }&\sum_{j=1}^{7}Y_{ij}=1\quad \forall i\in A\\
+		\text{(2) }&\sum_{i=1}^{10}X_{ij}\times Y_{ij}\leq 10\quad \forall j\in B\\
+		\text{(3) }&X_{ij}\in\{0,1\}\forall i\in A \wedge \forall j\in B
 	\end{split}
 \end{equation*}
 \subsubsection{Valores óptimos y solución}
@@ -332,22 +334,22 @@ MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
 \begin{split}
 	X_{ij}&=\text{ Cantidad enviada desde área } i \text{ a sitio } j\\
 	\\
-	Y_j&=1 \text{ Si se utiliza el sitio } j\\
-	Y_j&=0 \text{ En otro caso}
+	Y_j&=1 \text{; Si se utiliza el sitio } j\\
+	Y_j&=0 \text{; En otro caso}
 \end{split}
 \end{equation*}
 \subsubsection{Función Objetivo}
 \begin{equation*}
 \begin{split}
 	minZ &= \sum_{j=1}^{7}Y_j\times CostoFijo[j] + \sum_{j=1}^{7}\sum_{i=1}^{10}Costo[i][j]\times X_{ij}\\ 
-	&+ \sum_{j=1}^{7}\sum_{i=1}^{10}CostoOP[j]\times X_{ij} \quad \forall i \in A \wedge \forall j \in B
+	&+ \sum_{j=1}^{7}\sum_{i=1}^{10}CostoOP[j]\times X_{ij}
 \end{split}
 \end{equation*}
 \subsubsection{Restricciones}
 \begin{equation*}
 \begin{split}
-	(1)& \sum_{i=1}^{10}X_{ij}\leq Y_{j}\times \sum_{i=1}^{10}MArea[i]\quad\forall j\in B\\
-	(2)&\sum_{j=1}^{7}X_{ij}=MArea[i]\quad\forall i\in A
+	\text{(1) }& \sum_{i=1}^{10}X_{ij}\leq Y_{j}\times \sum_{i=1}^{10}MArea[i]\quad\forall j\in B\\
+	\text{(2) }&\sum_{j=1}^{7}X_{ij}=MArea[i]\quad\forall i\in A
 \end{split}
 \end{equation*}
 \subsubsection{Valores óptimos y solución}
@@ -398,25 +400,20 @@ MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
 \subsubsection{Variables de Decisión}
 \begin{equation*}
 \begin{split}
-	Y_j&=1\text{ ,Si se utiliza sitio } j\quad \forall j \in B\\
-	Y_{j}&= 0 \text{ ,En otro caso}\quad \forall j \in B
+	Y_j&=1\text{; Si se utiliza sitio } j\quad \forall j \in B\\
+	Y_{j}&= 0 \text{; En otro caso}\quad \forall j \in B
 \end{split}
 \end{equation*}
 \subsubsection{Función Objetivo}
 \begin{equation*}
 \begin{split}
-minZ &= \sum_{j=1}^{7}Y_j\times CostoFijo[j] + \sum_{i=1}^{10}\sum_{j=1}^{7}MArea[i]\times Costo[i][j]\times Y_j\\ 
-&+ \sum_{i=1}^{10}\sum_{j=1}^{7}MArea[i]\times CostoOP[j]\times Y_j
-\end{split}
-\end{equation*}
-\begin{equation*}
-\begin{split}
-\sum_{i=1}^{10}MArea[i]\times Y_{ij}\leq 2000\times X_j
+minZ &= \sum_{j=1}^{7}Y_j\times CostoFijo[j] + \sum_{i=1}^{10}MArea[i]\times \sum_{j=1}^{7} Costo[i][j]\times Y_j\\ 
+&+ \sum_{i=1}^{10}MArea[i]\times\sum_{j=1}^{7} CostoOP[j]\times Y_j
 \end{split}
 \end{equation*}
 \subsubsection{Restricciones}
 \begin{equation*}
-	(1)\sum_{j=1}^{7}Y_j=1
+	\text{(1) }\sum_{j=1}^{7}Y_j=1
 \end{equation*}
 \subsubsection{Valores óptimos y solución}
 \begin{itemize}

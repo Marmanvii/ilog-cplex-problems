@@ -79,7 +79,7 @@
 \subsubsection{Función Objetivo}
 \begin{equation*}
 \begin{split}
-	maxZ = \sum_{i = 1}^{i}X_i\times RAE_i
+	maxZ = \sum_{i = 1}^{10}X_i\times RAE_i \quad \forall i \in N
 \end{split}
 \end{equation*}
 \subsubsection{Restricciones}
@@ -160,7 +160,7 @@ $\therefore$ Valor óptimo: $z=98500$
 		\end{equation*}
 	\item Demanda
 		\begin{equation*}
-		\text{(10)}	-X_{71}-X_{810}-X{910}=-v
+		\text{(10)}	-X_{710}-X_{810}-X_{910}=-v
 		\end{equation*}
 	\item Transición
 		\begin{equation*}
@@ -214,7 +214,18 @@ $\therefore$ Valor óptimo: $z=98500$
 \begin{split}
 	A&=\{1,2,3,4,5,6,7,8,9,10\}\\
 	B&=\{1,2,3,4,5,6,7\}\\
-	Costo &= \text{Tabla presentada}\\
+	Costo &= \begin{bmatrix}
+	14 & 16 & 10 & 8 & 14 & 10 & 16\\
+	12 & 11 & 12 & 14 & 14 & 12 & 14\\
+	13 & 8 & 9 & 11 & 13 & 15 & 12\\
+	10 & 15 & 14 & 12 & 16 & 15 & 13\\
+	8 & 12 & 10 & 11 & 12 & 13 & 14\\
+	11 & 10 & 8 & 6 & 11 & 8 & 9\\
+	13 & 18 & 9 & 9 & 13 & 11 & 15\\
+	15 & 12 & 11 & 14 & 12 & 16 & 10\\
+	10 & 11 & 18 & 17 & 9 & 14 & 9\\
+	9 & 16 & 13 & 12 & 10 & 8 & 8
+	\end{bmatrix}\\
 	CostoOP&=[8,10,9,11,9,10,12]\\
 	CostoFijo&=[1000,800,700,1200,950,1150]\\
 	MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
@@ -299,7 +310,18 @@ Basta con agregar una restricción además del modelado creado para la parte ant
 \begin{split}
 A&=\{1,2,3,4,5,6,7,8,9,10\}\\
 B&=\{1,2,3,4,5,6,7\}\\
-Costo &= \text{Tabla presentada}\\
+Costo &= \begin{bmatrix}
+14 & 16 & 10 & 8 & 14 & 10 & 16\\
+12 & 11 & 12 & 14 & 14 & 12 & 14\\
+13 & 8 & 9 & 11 & 13 & 15 & 12\\
+10 & 15 & 14 & 12 & 16 & 15 & 13\\
+8 & 12 & 10 & 11 & 12 & 13 & 14\\
+11 & 10 & 8 & 6 & 11 & 8 & 9\\
+13 & 18 & 9 & 9 & 13 & 11 & 15\\
+15 & 12 & 11 & 14 & 12 & 16 & 10\\
+10 & 11 & 18 & 17 & 9 & 14 & 9\\
+9 & 16 & 13 & 12 & 10 & 8 & 8
+\end{bmatrix}\\
 CostoOP&=[8,10,9,11,9,10,12]\\
 CostoFijo&=[1000,800,700,1200,950,1150]\\
 MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
@@ -351,7 +373,42 @@ MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
 	\item Valor óptimo = 209800
 \end{itemize}
 \subsection{Formule  el  modelo  que  permita  construir  las  plantas de  tratamiento  de  aguas  servidas  al  mínimo  costo, asumiendo  que  cada  área  de  recolección  debe  ser  atendida  únicamente  por  una  planta  y  que  puede  ser construida solo una planta de tratamiento con capacidad ilimitada para recibir aguas servidas}
-Además de las restricciones presentes en la formulación anterior, se agrega la siguiente restricción:
+\subsubsection{Constantes}
+\begin{equation*}
+\begin{split}
+A&=\{1,2,3,4,5,6,7,8,9,10\}\\
+B&=\{1,2,3,4,5,6,7\}\\
+Costo &= \begin{bmatrix}
+14 & 16 & 10 & 8 & 14 & 10 & 16\\
+12 & 11 & 12 & 14 & 14 & 12 & 14\\
+13 & 8 & 9 & 11 & 13 & 15 & 12\\
+10 & 15 & 14 & 12 & 16 & 15 & 13\\
+8 & 12 & 10 & 11 & 12 & 13 & 14\\
+11 & 10 & 8 & 6 & 11 & 8 & 9\\
+13 & 18 & 9 & 9 & 13 & 11 & 15\\
+15 & 12 & 11 & 14 & 12 & 16 & 10\\
+10 & 11 & 18 & 17 & 9 & 14 & 9\\
+9 & 16 & 13 & 12 & 10 & 8 & 8
+\end{bmatrix}\\
+CostoOP&=[8,10,9,11,9,10,12]\\
+CostoFijo&=[1000,800,700,1200,950,1150]\\
+MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
+\end{split}
+\end{equation*}
+\subsubsection{Variables de Decisión}
+\begin{equation*}
+\begin{split}
+	Y_j&=1\text{ Si se utiliza sitio } j\quad \forall j \in B\\
+	Y_{j}&= 0 \text{ En otro caso}\quad \forall j \in B
+\end{split}
+\end{equation*}
+\subsubsection{Función Objetivo}
+\begin{equation*}
+\begin{split}
+minZ &= \sum_{j=1}^{7}Y_j\times CostoFijo[j] + \sum_{j=1}^{7}\sum_{i=1}^{10}MArea[i]\times Costo[i][j]\times Y_j\\ 
+&+ \sum_{j=1}^{7}\sum_{i=1}^{10}MArea[i]\times CostoOP[j]\times Y_j \quad \forall i \in A \wedge \forall j \in B
+\end{split}
+\end{equation*}
 \begin{equation*}
 \begin{split}
 \sum_{i=1}^{10}MArea[i]\times Y_{ij}\leq 2000\times X_j\quad\forall i\in A \wedge \forall j \in B

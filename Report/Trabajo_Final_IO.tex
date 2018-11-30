@@ -180,6 +180,16 @@
 
 \section{Tercer Problema}
 \subsection{Formule  el  modelo  que  permita  construir  las  plantas de  tratamiento  de  aguas  servidas  al  mínimo  costo  asumiendo  que  cada  sitio  tiene  capacidad  ilimitada para  recibir  aguas  servidas  y  que  cada  área  de  recolección debe ser atendida únicamente por una planta}
+\subsubsection{Constantes}
+\begin{equation*}
+\begin{split}
+	A&=\{1,2,3,4,5,6,7,8,9,10\}\\
+	B&=\{1,2,3,4,5,6,7\}\\
+	CostoOP&=[8,10,9,11,9,10,12]\\
+	CostoFijo&=[1000,800,700,1200,950,1150]\\
+	MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
+\end{split}
+\end{equation*}
 \subsubsection{Variables de Decisión}
 \begin{equation*}
 \begin{split}
@@ -200,7 +210,8 @@
 \begin{equation*}
 	\begin{split}
 		(1)&\sum_{j=1}^{7}Y_{ij}=1\quad \forall i\in\{1,\dots,10\}\\
-		(2)&\sum_{i=1}^{10}Y_{ij}\leq 10\quad \forall j\in\{1,\dots,7\}
+		(2)&\sum_{i=1}^{10}Y_{ij}\leq 10\quad \forall j\in\{1,\dots,7\}\\
+		(3)&(i,j)\geq
 	\end{split}
 \end{equation*}
 \end{document}

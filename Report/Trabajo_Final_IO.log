@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.11)  29 NOV 2018 21:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.9.11)  29 NOV 2018 21:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -931,7 +931,7 @@ tratamiento
 Here is how much of TeX's memory you used:
  23615 strings out of 492642
  458937 string characters out of 6135566
- 503624 words of memory out of 5000000
+ 504624 words of memory out of 5000000
  27171 multiletter control sequences out of 15000+600000
  544123 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -948,7 +948,7 @@ st/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/
 public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
 /sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb><
 /usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Trabajo_Final_IO.pdf (5 pages, 188340 bytes).
+Output written on Trabajo_Final_IO.pdf (5 pages, 188897 bytes).
 PDF statistics:
  107 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream

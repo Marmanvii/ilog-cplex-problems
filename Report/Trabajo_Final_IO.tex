@@ -177,4 +177,30 @@
 			X_{ij}\geq 0\ \forall(i,j)\in A
 		\end{equation*}
 \end{itemize}
+
+\section{Tercer Problema}
+\subsection{Formule  el  modelo  que  permita  construir  las  plantas de  tratamiento  de  aguas  servidas  al  mínimo  costo  asumiendo  que  cada  sitio  tiene  capacidad  ilimitada para  recibir  aguas  servidas  y  que  cada  área  de  recolección debe ser atendida únicamente por una planta}
+\subsubsection{Variables de Decisión}
+\begin{equation*}
+\begin{split}
+	X_j&=1 \text{; Si se utiliza sitio }j\\
+	X_j&=0 \text{; En otro caso}\\\\
+	Y_{ij}&=1 \text{; área } i \text{ es atendida por sitio }j\\
+	Y_{ij}&=0 \text{; en otro caso}
+\end{split}
+\end{equation*}
+\subsubsection{Función Objetivo}
+\begin{equation*}
+\begin{split}
+	minZ&=\sum_{j=1}^{7}X_j\times CostoFijo[j]+\sum_{i=1}^{10}MArea[i]\sum_{j=1}^{7}Costo[i][j]\times Y_{ij}\\
+	&+\sum_{j=1}^{7}CostoOP[j]\sum_{i=1}^{10}Y_{ij}\times MArea[i]
+\end{split}
+\end{equation*}
+\subsubsection{Restricciones}
+\begin{equation*}
+	\begin{split}
+		(1)&\sum_{j=1}^{7}Y_{ij}=1\quad \forall i\in\{1,\dots,10\}\\
+		(2)&\sum_{i=1}^{10}Y_{ij}\leq 10\quad \forall j\in\{1,\dots,7\}
+	\end{split}
+\end{equation*}
 \end{document}

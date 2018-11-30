@@ -107,7 +107,7 @@
 	\end{equation*} 
 	\item La corporación  no  permite  que el  portafolio  de  valores  escogidos  tenga  un  factor de  riesgo ponderado mayor que 1.0.
 	\begin{equation*}
-		\sum_{i = 1}^{5}x_i\times FR_i \leq \sum_{i = 1}^{i}x_i
+		\sum_{i = 1}^{5}x_i\times FR_i \leq 1.0 \times \sum_{i = 1}^{5}x_i
 	\end{equation*}
 	\item No negatividad.
 	\begin{equation*}
@@ -118,14 +118,14 @@
 \begin{itemize}
 	\item Soluciones óptimas:
 	\begin{enumerate}
-		\item $x_1=300000$
-		\item $x_2=0$
-		\item $x_3=250000$
-		\item $x_4=250000$
-		\item $x_5=200000$
+		\item $x_1=300000\text{ dólares}$
+		\item $x_2=0\text{ dólares}$
+		\item $x_3=250000\text{ dólares}$
+		\item $x_4=250000\text{ dólares}$
+		\item $x_5=200000\text{ dólares}$
 	\end{enumerate}
 \end{itemize}
-$\therefore$ Valor óptimo: $z=98500$
+$\therefore$ Valor óptimo: $z=98500 \text{ dólares}$
 \newpage
 \section{Segundo Problema}
 \subsection{Dibuje el grafo que represente el problema.}
@@ -204,8 +204,8 @@ $\therefore$ Valor óptimo: $z=98500$
 		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 12\\
 		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 19\\
 		0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0
-	\end{bmatrix}$
-	\item Valor óptimo = 59
+	\end{bmatrix}$ mensajes
+	\item Valor óptimo = 59 mensajes simultáneos
 \end{itemize}
 \section{Tercer Problema}
 \subsection{Formule  el  modelo  que  permita  construir  las  plantas de  tratamiento  de  aguas  servidas  al  mínimo  costo  asumiendo  que  cada  sitio  tiene  capacidad  ilimitada para  recibir  aguas  servidas  y  que  cada  área  de  recolección debe ser atendida únicamente por una planta}
@@ -236,22 +236,22 @@ $\therefore$ Valor óptimo: $z=98500$
 \begin{split}
 	X_j&=1 \text{; Si se utiliza sitio }j\quad \forall j \in B\\
 	X_j&=0 \text{; En otro caso}\\\\
-	Y_{ij}&=1 \text{; área } i \text{ es atendida por sitio }j\quad \forall i \in A \wedge \forall j \in B\\
-	Y_{ij}&=0 \text{; en otro caso}
+	Y_{ij}&=1 \text{; Área } i \text{ es atendida por sitio }j\quad \forall i \in A \wedge \forall j \in B\\
+	Y_{ij}&=0 \text{; En otro caso}
 \end{split}
 \end{equation*}
 \subsubsection{Función Objetivo}
 \begin{equation*}
 \begin{split}
 	minZ&=\sum_{j=1}^{7}X_j\times CostoFijo[j]+\sum_{i=1}^{10}MArea[i]\sum_{j=1}^{7}Costo[i][j]\times Y_{ij}\\
-	&+\sum_{j=1}^{7}CostoOP[j]\sum_{i=1}^{10}Y_{ij}\times MArea[i] \quad \forall i \in A \wedge \forall j \in B
+	&+\sum_{j=1}^{7}CostoOP[j]\sum_{i=1}^{10}Y_{ij}\times MArea[i] \quad 
 \end{split}
 \end{equation*}
 \subsubsection{Restricciones}
 \begin{equation*}
 	\begin{split}
 		(1)&\sum_{j=1}^{7}Y_{ij}=1\quad \forall i\in A\\
-		(2)&\sum_{i=1}^{10}Y_{ij}\leq 10\quad \forall j\in B\\
+		(2)&\sum_{i=1}^{10}X_{ij}\times Y_{ij}\leq 10\quad \forall j\in B\\
 		(3&)X_{ij}\in\{0,1\}\forall i\in A \wedge \forall j\in B
 	\end{split}
 \end{equation*}
@@ -330,10 +330,10 @@ MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
 \subsubsection{Variables de Decisión}
 \begin{equation*}
 \begin{split}
-	X_{ij}&=\text{Cantidad enviada desde área } i \text{ a sitio } j\\
+	X_{ij}&=\text{ Cantidad enviada desde área } i \text{ a sitio } j\\
 	\\
-	Y_j&=1 \text{Si se utiliza el sitio } j\\
-	Y_j=0 \text{En otro caso}
+	Y_j&=1 \text{ Si se utiliza el sitio } j\\
+	Y_j&=0 \text{ En otro caso}
 \end{split}
 \end{equation*}
 \subsubsection{Función Objetivo}
@@ -346,8 +346,8 @@ MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
 \subsubsection{Restricciones}
 \begin{equation*}
 \begin{split}
-	(1)& \sum_{i=1}^{10}X_{ij}\leq Y_{j}\times \sum_{i=1}^{10}MArea[i]\quad\forall j\in B \text{; Máxima Capacidad}\\
-	(2)&\sum_{j=1}^{7}X_{ij}=MArea[i]\quad\forall i\in A \text{; Satisfacer Demanda}
+	(1)& \sum_{i=1}^{10}X_{ij}\leq Y_{j}\times \sum_{i=1}^{10}MArea[i]\quad\forall j\in B\\
+	(2)&\sum_{j=1}^{7}X_{ij}=MArea[i]\quad\forall i\in A
 \end{split}
 \end{equation*}
 \subsubsection{Valores óptimos y solución}
@@ -398,21 +398,25 @@ MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
 \subsubsection{Variables de Decisión}
 \begin{equation*}
 \begin{split}
-	Y_j&=1\text{ Si se utiliza sitio } j\quad \forall j \in B\\
-	Y_{j}&= 0 \text{ En otro caso}\quad \forall j \in B
+	Y_j&=1\text{ ,Si se utiliza sitio } j\quad \forall j \in B\\
+	Y_{j}&= 0 \text{ ,En otro caso}\quad \forall j \in B
 \end{split}
 \end{equation*}
 \subsubsection{Función Objetivo}
 \begin{equation*}
 \begin{split}
-minZ &= \sum_{j=1}^{7}Y_j\times CostoFijo[j] + \sum_{j=1}^{7}\sum_{i=1}^{10}MArea[i]\times Costo[i][j]\times Y_j\\ 
-&+ \sum_{j=1}^{7}\sum_{i=1}^{10}MArea[i]\times CostoOP[j]\times Y_j \quad \forall i \in A \wedge \forall j \in B
+minZ &= \sum_{j=1}^{7}Y_j\times CostoFijo[j] + \sum_{i=1}^{10}\sum_{j=1}^{7}MArea[i]\times Costo[i][j]\times Y_j\\ 
+&+ \sum_{i=1}^{10}\sum_{j=1}^{7}MArea[i]\times CostoOP[j]\times Y_j
 \end{split}
 \end{equation*}
 \begin{equation*}
 \begin{split}
-\sum_{i=1}^{10}MArea[i]\times Y_{ij}\leq 2000\times X_j\quad\forall i\in A \wedge \forall j \in B
+\sum_{i=1}^{10}MArea[i]\times Y_{ij}\leq 2000\times X_j
 \end{split}
+\end{equation*}
+\subsubsection{Restricciones}
+\begin{equation*}
+	(1)\sum_{j=1}^{7}Y_j=1
 \end{equation*}
 \subsubsection{Valores óptimos y solución}
 \begin{itemize}

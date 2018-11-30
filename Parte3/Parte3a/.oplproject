@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+	<version>1.0</version>
+	<configs>
+		<config default="true" name="Parte3a" category="opl">
+			<ref name="Parte3a.mod" type="model">
+			</ref>
+			<ref name="Parte3a.ops" type="setting">
+			</ref>
+			<ref name="Parte3a.dat" type="data">
+			</ref>
+		</config>
+	</configs>
+	
+</project>

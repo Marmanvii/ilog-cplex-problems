@@ -11,6 +11,8 @@
 \usepackage{fancyhdr}
 \usepackage{fancybox}
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
 \usepackage[framemethod=tikz]{mdframed}
 \usetikzlibrary{shadows}
 
@@ -129,6 +131,13 @@
 \end{itemize}
 $\therefore$ Valor óptimo: $z=98500 \text{ dólares}$
 \newpage
+\subsection{Comentarios}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{claudio1.jpg}
+	\caption*{Comentario de Claudio Durán}
+\end{figure}
+\newpage
 \section{Segundo Problema}
 \subsection{Dibuje el grafo que represente el problema.}
 \includegraphics[scale=1]{drawing.eps}
@@ -209,6 +218,14 @@ $\therefore$ Valor óptimo: $z=98500 \text{ dólares}$
 	\end{bmatrix}$ mensajes
 	\item Valor óptimo = 59 mensajes simultáneos
 \end{itemize}
+\newpage
+\subsection{Comentarios}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{claudio2.jpg}
+	\caption*{Comentario de Claudio Durán}
+\end{figure}
+\newpage
 \section{Tercer Problema}
 \subsection{Formule  el  modelo  que  permita  construir  las  plantas de  tratamiento  de  aguas  servidas  al  mínimo  costo  asumiendo  que  cada  sitio  tiene  capacidad  ilimitada para  recibir  aguas  servidas  y  que  cada  área  de  recolección debe ser atendida únicamente por una planta}
 \subsubsection{Constantes}
@@ -277,7 +294,7 @@ $\therefore$ Valor óptimo: $z=98500 \text{ dólares}$
 	\begin{bmatrix}
 	1 & 0 & 1 & 0 & 0 & 0 & 0\\
 	\end{bmatrix}$
-	\item Valor óptimo = 209800
+	\item Valor óptimo = \$ 209800
 \end{itemize}
 \subsection{Formule  el  modelo  que  permita  construir  las  plantas  de  tratamiento  de  aguas  servidas  al  mínimo  costo, sabiendo que cada sitio puede  tratar a lo más 2.000 mirialitros mensuales y cada área de recolección debe ser atendida por una única planta}
 Basta con agregar una restricción además del modelado creado para la parte anterior, junto a las demás restricciones:
@@ -304,7 +321,7 @@ Basta con agregar una restricción además del modelado creado para la parte ant
 	\begin{bmatrix}
 	1 & 1 & 1 & 1 & 1 & 1 & 1\\
 	\end{bmatrix}$
-	\item Valor óptimo = 227500
+	\item Valor óptimo = \$ 227500
 \end{itemize}
 \subsection{Formule  el  modelo  que  permita  construir  las  plantas de  tratamiento  de  aguas  servidas  al  mínimo  costo, asumiendo  que  cada  sitio  tiene  capacidad  ilimitada de  recibir  aguas  servidas  y  que  cada  área  de  recolección puede enviar las aguas servidas a diferentes plantas de tratamiento}
 \subsubsection{Constantes}
@@ -372,7 +389,7 @@ MArea&=[500,700,1500,1000,1800,1200,1500,1000,900,1600]
 	\begin{bmatrix}
 	1 & 0 & 1 & 0 & 0 & 0 & 0\\
 	\end{bmatrix}$
-	\item Valor óptimo = 209800
+	\item Valor óptimo = \$ 209800
 \end{itemize}
 \subsection{Formule  el  modelo  que  permita  construir  las  plantas de  tratamiento  de  aguas  servidas  al  mínimo  costo, asumiendo  que  cada  área  de  recolección  debe  ser  atendida  únicamente  por  una  planta  y  que  puede  ser construida solo una planta de tratamiento con capacidad ilimitada para recibir aguas servidas}
 \subsubsection{Constantes}
@@ -422,6 +439,13 @@ minZ &= \sum_{j=1}^{7}Y_j\times CostoFijo[j] + \sum_{i=1}^{10}MArea[i]\times \su
 	\begin{bmatrix}
 	1 & 0 & 0 & 0 & 0 & 0 & 0\\
 	\end{bmatrix}$
-	\item Valor óptimo = 225000
+	\item Valor óptimo = \$ 225000
 \end{itemize}
+\newpage
+\subsection{Comentarios}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{claudio3.jpg}
+	\caption*{Comentario de Claudio Durán}
+\end{figure}
 \end{document}
